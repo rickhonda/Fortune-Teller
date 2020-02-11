@@ -39,13 +39,11 @@ public class FortuneTeller {
 	        	
 		// Get birth month (as integer)
 		System.out.println("Enter your birth month as an integer:");
-		// this type of bug with input.nextInt() is a huge pet peeve of mine 
 		String birthMonth;
 		birthMonth = check.forQuit(input.nextLine().trim());
 		
 		// Get favorite ROYGBIV color, "help" displays ROYGBIV key	
 		System.out.println("Enter your favorite ROYGBIV color:\nType \"Help\" to show ROYGBIV colors...");		
-	
 		String favColor = check.forQuit(input.nextLine().trim().toLowerCase());
 		while(favColor.charAt(0) == 'h') {
 			System.out.println("The ROYGBIV colors are red, orange, yellow, green, blue, indigo, violet.");
