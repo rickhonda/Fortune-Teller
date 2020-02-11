@@ -71,9 +71,8 @@ public class FortuneTeller {
 		}
 		
 		// numberSiblings -> vacationHomeLocation
-		// note: I'm not using switch because of a duplicate case error
 		String vacationHomeLocation;
-		int siblings = Integer.parseInt(numberSiblings);
+		int siblings = Integer.parseInt(numberSiblings);		
 		if(siblings == 0 ) {
 			vacationHomeLocation = "Ulaanbaatar, Mongolia";
 		} else if(siblings == 1) {
@@ -87,30 +86,38 @@ public class FortuneTeller {
 		} else {
 			vacationHomeLocation = "Titan";
 		}
-		
+			
 		// favColor -> mode of transportation 
 		String modeOfTransport; 
 		char charColor = favColor.charAt(0);
-		if(charColor == 'r') {
-			modeOfTransport = "taxi";
-		} else if(charColor == 'o') {
+		switch (charColor) {
+		case 'r':
+			modeOfTransport = "taxi"; 
+			break;
+		case 'o':
 			modeOfTransport = "city bus";
-		} else if(charColor == 'y') {
+			break;
+		case 'y':
 			modeOfTransport = "motorcycle";
-		} else if(charColor == 'g') {
+			break;
+		case 'g':
 			modeOfTransport = "VTOL vehicle";
-		} else if(charColor == 'b') {
+			break;
+		case 'b':
 			modeOfTransport = "train";
-		} else if(charColor == 'i') {
+			break;
+		case 'i':
 			modeOfTransport = "magic carpet";
-		} else {
+			break;
+		case 'v':
 			modeOfTransport = "horse";
+			break;
+		default: modeOfTransport = "litter";
 		}
 		
 		// birthMonth -> bankBalance
 		double bankBalance;
 		int month = Integer.parseInt(birthMonth);
-
 		if(month >= 1 & month <= 4) {
 			bankBalance = month * rand.nextInt(10000);
 		} else if(month >= 5 & month <= 8 ) {
